@@ -1,0 +1,1 @@
+Fleet management refers to the process of overseeing, organizing, and coordinating vehicles used by a company or organization. This includes commercial vehicles like trucks, vans, cars, and delivery vehicles.
