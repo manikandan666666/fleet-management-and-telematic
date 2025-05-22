@@ -1,0 +1,31 @@
+import network
+import ujson
+from time import sleep
+import random
+
+def connect_wifi():
+    print("Connecting to WiFi...", end="")
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect("Wokwi-GUEST", "")
+    while not wlan.isconnected():
+        print(".", end="")
+        sleep(0.5)
+    print("\nConnected to WiFi")
+
+def collect_vehicle_data():
+    data = {
+        "engine_temp": round(random.uniform(85, 105), 2),
+        "fuel_consumption": round(random.uniform(6, 12), 2),
+        "mileage": random.randint(10000, 100000),
+        "oil_pressure": round(random.uniform(25, 35), 2),
+        "vibration_level": round(random.uniform(3, 7), 2)
+    }
+    return data
+
+connect_wifi()
+
+while True:
+    vehicle_data = collect_vehicle_data()
+    print("Simulated Vehicle Data:", vehicle_data)
+    sleep(10)
